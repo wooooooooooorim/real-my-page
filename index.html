@@ -2,12 +2,54 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Self Introduction - Woorim Choi</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Woorim Choi - Profile & Assignments</title>
+    <style>
+        body {
+            background-color: #f5eadd; 
+            color: #5d4037;          
+            font-family: serif;
+            padding: 40px;
+        }
+        hr {
+            border: 0;
+            height: 5px;
+            background-color: #8d6e63;
+            margin: 30px 0;
+        }      
+        
+        .title {
+            font-size: 40px;      
+            text-align: center;   
+        }
+        .bold-p {
+            font-weight: bold;   
+        }        
+        input[type="text"] {
+            background-color: lightpink;  
+        }
+        input[type="password"] {
+            background-color: lightskyblue; 
+        }       
+        .codinglover {
+            width: 120px;
+            height: 50px;
+            background-color: orange;    
+            text-align: center;         
+            line-height: 50px;           
+            border-radius: 15px;         
+            margin-top: 10px;
+        }
+        .codinglover a {
+            color: white;                
+            text-decoration: none;       
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <!-- "아래 소개는 저와 저의 취미에 관한 소개입니다." -->
+
     <h1>Hello, my name is Woorim Choi</h1>
+    <hr>
     <p>I am a Dongseo University student majoring in Computer Engineering.</p>
     
     <h3>My Interests</h3>
@@ -17,18 +59,36 @@
         <li>Chess</li>
         <li>Singing</li>
     </ul>
-       <!-- "저에 대한 사진입니다." -->
-    <img src="myprofile.jpg" alt="최우림의 사진" style="max-width: 250px; border-radius: 15px; border: 2px solid #9999CC; margin-top: 20px;">
 
-    <div style="margin-top: 20px;">
-        <button onclick="showAlert()">Click Me!</button>
+    <div style="border: 1px solid #8d6e63; width: 100px; padding: 5px; border-radius: 10px;">
+        최우림의 사진
+    </div>
+    <button style="margin-top: 10px;">Click Me!</button>
+
+    <hr style="background-color: #5d4037;">
+    <h2 style="text-align: center;">[ 과제 5장,6장CSS ]</h2>
+
+    <div>
+        <h1 class="title">CSS 과제: 과재</h1>
+        <p class="bold-p">한계까지 밀어붙여 우림아 놀시간이없다.</p>
+        <p>두 번째 문단입니다. 더이상 물러날 곳이 없다.</p>
     </div>
 
-    <script>
-        // 버튼을 클릭한다면 저의 페이지에 온 환영인사가 나올것입니다
-        function showAlert() {
-            alert('Come on my paradise! and enjoy your something.');
-        }
-    </script>
+    <br><br>
+
+    <div>
+        <p>아이디(Text): <input type="text" placeholder="연분홍색 배경"></p>
+        <p>비밀번호(Password): <input type="password" placeholder="연하늘색 배경"></p>
+    </div>
+
+    <br><br>
+
+    <div>
+        <p>간단한 버튼 꾸미기:</p>
+        <div class="codinglover">
+            <a href="#">Click</a>
+        </div>
+    </div>
+
 </body>
 </html>
