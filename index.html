@@ -35,7 +35,7 @@
             height: 50px;
             background-color: orange;    
             text-align: center;         
-            line-height: 50px;           
+            line-height: 50px;            
             border-radius: 15px;         
             margin-top: 10px;
         }
@@ -43,6 +43,61 @@
             color: white;                
             text-decoration: none;       
             display: block;
+        }
+
+        .container {
+            width: 1080px;
+            margin: 0 auto 8px auto;
+            display: flex;
+        }
+        .gnb-container {
+            justify-content: space-between;
+        }
+        .gnb {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #2d5e2e; 
+        }
+        .gnb li {
+            color: white;
+            padding: 5px 10px;
+        }
+        .rank {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #fdd835; 
+        }
+        .rank li {
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+        .left {
+            width: 740px;
+            height: 428px;
+            background-color: #e53935; 
+            margin-right: 8px;
+        }
+        .right {
+            width: 332px;
+            height: 428px;
+            background-color: #3949ab; 
+        }
+        .footer {
+            width: 100%;
+            height: 80px;
+            background-color: #d4e157; 
+        }
+        h1 { margin: 0; padding: 10px 0; }
+
+        .js-result-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 2px dashed #8d6e63;
+            border-radius: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -66,86 +121,26 @@
     <button style="margin-top: 10px;">Click Me!</button>
 
     <hr style="background-color: #5d4037;">
-    <h2 style="text-align: center;">[ 과제 5장,6장CSS ]</h2>
 
+    <h2 style="text-align: center;">[ 과제 5장, 6장 CSS ]</h2>
     <div>
         <h1 class="title">CSS 과제: 과재</h1>
         <p class="bold-p">한계까지 밀어붙여 우림아 놀시간이없다.</p>
         <p> 더이상 물러날 곳이 없다.</p>
     </div>
 
-    <br><br>
+    <br>
 
     <div>
         <p>아이디(Text): <input type="text" placeholder="연분홍색 배경"></p>
         <p>비밀번호(Password): <input type="password" placeholder="연하늘색 배경"></p>
     </div>
 
-    <br><br>
-
-    <div>
-        <p>간단한 버튼 꾸미기:</p>
-        <div class="codinglover">
-            <a href="#">Click</a>
-        </div>
+    <div class="codinglover">
+        <a href="#">Click</a>
     </div>
-    <title>Layout 완성</title>
-    <style>
-        .container {
-            width: 1080px;
-            margin: 0 auto 8px auto;
-            display: flex;
-        }
 
-        .gnb-container {
-            justify-content: space-between;
-        }
-
-        .gnb {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            background-color: #2d5e2e; 
-        }
-        .gnb li {
-            color: white;
-            padding: 5px 10px;
-        }
-
-        .rank {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            background-color: #fdd835; 
-        }
-        .rank li {
-            padding: 5px 10px;
-            font-weight: bold;
-        }
-
-        .left {
-            width: 740px;
-            height: 428px;
-            background-color: #e53935; 
-            margin-right: 8px;
-        }
-        .right {
-            width: 332px;
-            height: 428px;
-            background-color: #3949ab; 
-        }
-
-        .footer {
-            width: 100%;
-            height: 80px;
-            background-color: #d4e157; 
-        }
-
-        h1 { margin: 0; padding: 10px 0; }
-    </style>
-</head>
-<body>
+    <hr>
 
     <div class="container">
         <h1>Logo</h1>
@@ -165,13 +160,46 @@
         <div class="right"></div>
     </div>
 
-    <div class="container">
-        <div class="left"></div>
-        <div class="right"></div>
-    </div>
-
-    <div class="container">
+    <div class="container" style="margin-top: 8px;">
         <div class="footer"></div>
     </div>
+
+    <hr>
+
+    <h2 style="text-align: center;">[ 과제 9장 자바스크립트 결과 ]</h2>
+    <div class="js-result-box">
+        <script>
+            let cm = prompt("16번문제 : 인치와 피트로 변환하기 (cm 입력)");
+            let totalInch = cm / 2.54;
+            let feet = Math.floor(totalInch / 12);
+            let inch = totalInch % 12;
+
+            document.write("<h3>16번 결과</h3>");
+            document.write(cm + "cm는 " + feet + "피트, " + inch.toFixed(2) + "인치입니다.<br>");
+            document.write("<hr>");
+
+            let r = prompt("17번 : 원기둥의 반지름 길이 입력");
+            let h = prompt("17번: 원기둥의 높이 입력");
+            let pi = 3.14;  
+            let volume = r * r * pi * h;
+
+            document.write("<h3>17번 결과</h3>");
+            document.write("반지름 " + r + ", 높이 " + h + "인 원기둥의 부피: " + volume + "<br>");
+            document.write("<hr>");
+
+            let inputNum = prompt("18번 : 네 자리의 정수값 입력", "1234");
+            let num = parseInt(inputNum);
+
+            let chunk1000 = Math.floor(num / 1000);
+            let chunk100 = Math.floor((num % 1000) / 100);
+            let chunk10 = Math.floor((num % 100) / 10);
+            let chunk1 = num % 10;
+
+            document.write("<h3>18번 결과</h3>");
+            document.write("입력한 숫자: " + num + "<br>");
+            document.write("천의 자리: " + chunk1000 + ", 백의 자리: " + chunk100 + ", 십의 자리: " + chunk10 + ", 일의 자리: " + chunk1);
+        </script>
+    </div>
+
 </body>
 </html>
