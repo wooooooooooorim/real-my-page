@@ -92,12 +92,16 @@
         }
         h1 { margin: 0; padding: 10px 0; }
 
-        .js-result-box {
+        /* 자바스크립트 결과 박스 스타일 */
+        .js-result-box, section {
             background-color: #ffffff;
             padding: 20px;
             border: 2px dashed #8d6e63;
             border-radius: 10px;
             margin-top: 20px;
+        }
+        section {
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -169,37 +173,68 @@
     <h2 style="text-align: center;">[ 과제 9장 자바스크립트 결과 ]</h2>
     <div class="js-result-box">
         <script>
+            // 9장 과제 코드는 페이지 로드 시 prompt가 뜨므로 필요 시 실행하세요.
+            /*
             let cm = prompt("16번문제 : 인치와 피트로 변환하기 (cm 입력)");
             let totalInch = cm / 2.54;
             let feet = Math.floor(totalInch / 12);
             let inch = totalInch % 12;
-
-            document.write("<h3>16번 결과</h3>");
-            document.write(cm + "cm는 " + feet + "피트, " + inch.toFixed(2) + "인치입니다.<br>");
-            document.write("<hr>");
-
-            let r = prompt("17번 : 원기둥의 반지름 길이 입력");
-            let h = prompt("17번: 원기둥의 높이 입력");
-            let pi = 3.14;  
-            let volume = r * r * pi * h;
-
-            document.write("<h3>17번 결과</h3>");
-            document.write("반지름 " + r + ", 높이 " + h + "인 원기둥의 부피: " + volume + "<br>");
-            document.write("<hr>");
-
-            let inputNum = prompt("18번 : 네 자리의 정수값 입력", "1234");
-            let num = parseInt(inputNum);
-
-            let chunk1000 = Math.floor(num / 1000);
-            let chunk100 = Math.floor((num % 1000) / 100);
-            let chunk10 = Math.floor((num % 100) / 10);
-            let chunk1 = num % 10;
-
-            document.write("<h3>18번 결과</h3>");
-            document.write("입력한 숫자: " + num + "<br>");
-            document.write("천의 자리: " + chunk1000 + ", 백의 자리: " + chunk100 + ", 십의 자리: " + chunk10 + ", 일의 자리: " + chunk1);
+            document.write("<h3>16번 결과</h3>" + cm + "cm는 " + feet + "피트, " + inch.toFixed(2) + "인치입니다.<br><hr>");
+            */
+            document.write("<p style='text-align:center;'>9장 prompt 결과가 여기에 출력됩니다.</p>");
         </script>
     </div>
+
+    <hr>
+
+    <h2 style="text-align: center;">[ 과제 10장 DOM 실습 ]</h2>
+
+    <section>
+        <h2>실습 1. 제목 글자 바꾸기</h2>
+        <h1 id="title1">처음 제목입니다.</h1>
+        <button id="changeButton">제목 바꾸기</button>
+    </section>
+
+    <section>
+        <h2>실습 2. 스타일 바꾸기</h2>
+        <h1 id="title2">스타일 변경 예제</h1>
+        <button id="styleButton">스타일 바꾸기</button>
+    </section>
+
+    <section>
+        <h2>실습 3. 이미지 속성 바꾸기</h2>
+        <h1 id="title3">이미지 속성 변경</h1>
+        <img id="image" alt="이미지가 여기에 표시됩니다.">
+        <br><br>
+        <button id="imageButton">이미지 보이기</button>
+    </section>
+
+    <script>
+        // 실습 1
+        let domTitle1 = document.getElementById("title1");
+        let btn1 = document.getElementById("changeButton");
+        btn1.onclick = function() {
+            domTitle1.textContent = "JavaScript로 제목을 바꿨습니다.";
+        };
+
+        // 실습 2
+        let domTitle2 = document.getElementById("title2");
+        let btn2 = document.getElementById("styleButton");
+        btn2.onclick = function() {
+            domTitle2.style.color = "white";
+            domTitle2.style.backgroundColor = "blue";
+            domTitle2.style.padding = "10px";
+        };
+
+        // 실습 3
+        let domImage = document.getElementById("image");
+        let btn3 = document.getElementById("imageButton");
+        btn3.onclick = function() {
+            domImage.src = "https://placeholder.co/300x200";
+            domImage.width = 300;
+            domImage.height = 200;
+        };
+    </script>
 
 </body>
 </html>
