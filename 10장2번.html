@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM 실습 2</title>
+</head>
+<body>
+    <h1 id="title">스타일 변경 예제</h1>
+    <button id="styleButton">스타일 바꾸기</button>
+
+    <script>
+        let title = document.getElementById("title");
+
+        let styleButton = document.getElementById("styleButton");
+
+        styleButton.onclick = function() {
+            title.style.color = "white";
+            title.style.backgroundColor = "blue";
+            title.style.padding = "10px";
+        };
+    </script>
+</body>
+</html>
