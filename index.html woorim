@@ -186,4 +186,54 @@
 
     <hr>
 
-    <h2 style="text-align: center
+    <h2 style="text-align: center;">[ 과제 10장 DOM 실습 ]</h2>
+
+    <section>
+        <h2>실습 1. 제목 글자 바꾸기</h2>
+        <h1 id="title1">처음 제목입니다.</h1>
+        <button id="changeButton">제목 바꾸기</button>
+    </section>
+
+    <section>
+        <h2>실습 2. 스타일 바꾸기</h2>
+        <h1 id="title2">스타일 변경 예제</h1>
+        <button id="styleButton">스타일 바꾸기</button>
+    </section>
+
+    <section>
+        <h2>실습 3. 이미지 속성 바꾸기</h2>
+        <h1 id="title3">이미지 속성 변경</h1>
+        <img id="image" alt="이미지가 여기에 표시됩니다.">
+        <br><br>
+        <button id="imageButton">이미지 보이기</button>
+    </section>
+
+    <script>
+        // 실습 1
+        let domTitle1 = document.getElementById("title1");
+        let btn1 = document.getElementById("changeButton");
+        btn1.onclick = function() {
+            domTitle1.textContent = "JavaScript로 제목을 바꿨습니다.";
+        };
+
+        // 실습 2
+        let domTitle2 = document.getElementById("title2");
+        let btn2 = document.getElementById("styleButton");
+        btn2.onclick = function() {
+            domTitle2.style.color = "white";
+            domTitle2.style.backgroundColor = "blue";
+            domTitle2.style.padding = "10px";
+        };
+
+        // 실습 3
+        let domImage = document.getElementById("image");
+        let btn3 = document.getElementById("imageButton");
+        btn3.onclick = function() {
+            domImage.src = "https://placeholder.co/300x200";
+            domImage.width = 300;
+            domImage.height = 200;
+        };
+    </script>
+
+</body>
+</html>
